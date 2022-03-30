@@ -7,6 +7,11 @@ textarea {
   resize: none
 }
 
+#tweet-text.error {
+  border-bottom: 4px solid #c92432;
+  color: #c92432;
+}
+
 #tweet-text {
   border-bottom: 3px solid black;
 }
@@ -27,4 +32,9 @@ textarea {
 form {
   display: flex;
   flex-direction: column
+}
+
+#tweet_error {
+  color: #c92432;
+  display: none
 }

@@ -57,12 +57,16 @@ $(document).ready(function() {
   //submit Post for tweet Form
   $("#submit_tweet").submit(function(event) {
     event.preventDefault();
+    $('#tweet-text').removeClass("error");
+    $('#tweet_error').slideUp()
     let currentText = $("#tweet-text").val()
     if (!currentText){
-      alert("Please Enter Tweet")
+      $('#tweet_error').slideDown().text("Please enter your Tweet");
+      $('#tweet-text').addClass("error")
     }
     if (currentText.length > 140) {
-      alert("Tweet has too many characters")
+      $('#tweet_error').slideDown().text("Tweet has too many characters");
+      $('#tweet-text').addClass("error");
     } else {
       const tweetContent = $(this).serialize();
       const post = $.post(url="/tweets", tweetContent, function() {
