@@ -15,6 +15,13 @@ $(document).ready(function() {
     }
   }
 
+  //function to escape text content
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(obj){
     let convertedTime = timeago.format(obj["created_at"])
     let $tweet =
@@ -24,7 +31,7 @@ $(document).ready(function() {
           <img class="avatar" src="${obj.user.avatars}" /img>${obj.user.name}</div>
         <div class="article_tweet handle_text">${obj.user.handle}</div>
       </header>
-      <div class="article_tweet body">${obj.content.text}</div>
+      <div class="article_tweet body">${escape(obj.content.text)}</div>
       <footer class="article_tweet footer">
         <div class="article_tweet counter">${convertedTime}</div>
         <div class="article_tweet icons">
@@ -40,6 +47,7 @@ $(document).ready(function() {
   //function to load tweets from server
   const loadTweets = function() {
     $.get('/tweets', function(data) {
+      $('#tweets-container').empty();
       renderTweets(data);
     })
   };
@@ -49,16 +57,19 @@ $(document).ready(function() {
   //submit Post for tweet Form
   $("#submit_tweet").submit(function(event) {
     event.preventDefault();
-    const tweetContent = $(this).serialize();
-
-    // const post = $.ajax({
-    //   type: "POST", 
-    //   url: "/tweets", 
-    //   data: tweetContent,
-    //   processData: false
-    // }
-    //   )
-    const post = $.post(url="/tweets", {text: tweetContent})
+    let currentText = $("#tweet-text").val()
+    if (!currentText){
+      alert("Please Enter Tweet")
+    }
+    if (currentText.length > 140) {
+      alert("Tweet has too many characters")
+    } else {
+      const tweetContent = $(this).serialize();
+      const post = $.post(url="/tweets", tweetContent, function() {
+        $("#tweet-text").val('');
+        loadTweets()
+      });
+    }
   });
 
 
