@@ -1,0 +1,30 @@
+textarea {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  border-bottom: 4px solid black;
+  /* padding: 0.75em 0; */
+  resize: none
+}
+
+#tweet-text {
+  border-bottom: 3px solid black;
+}
+
+.tweet_buttons {
+  display:flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+  font-family: bungee
+}
+
+.tweet_buttons > button {
+  border: 0;
+  background-color: var(--navy-color);
+  color: #FFFFFF
+}
+
+form {
+  display: flex;
+  flex-direction: column
+}
