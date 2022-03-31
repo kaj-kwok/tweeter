@@ -61,11 +61,11 @@ $(document).ready(function() {
     $('#tweet_error').slideUp()
     let currentText = $("#tweet-text").val()
     if (!currentText){
-      $('#tweet_error').slideDown().text("Please enter your Tweet");
+      $('#tweet_error').slideDown().html(`<i class="fa-solid fa-triangle-exclamation"></i> Please enter your Tweet`);
       $('#tweet-text').addClass("error")
     }
     if (currentText.length > 140) {
-      $('#tweet_error').slideDown().text("Tweet has too many characters");
+      $('#tweet_error').slideDown().html(`<i class="fa-solid fa-triangle-exclamation"></i>Tweet has too many characters`);
       $('#tweet-text').addClass("error");
     } else {
       const tweetContent = $(this).serialize();
@@ -76,5 +76,5 @@ $(document).ready(function() {
     }
   });
 
-
+  
 });

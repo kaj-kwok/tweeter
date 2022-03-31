@@ -14,6 +14,7 @@ textarea {
 
 #tweet-text {
   border-bottom: 3px solid black;
+  padding: 4px
 }
 
 .tweet_buttons {
@@ -36,5 +37,7 @@ form {
 
 #tweet_error {
   color: #c92432;
-  display: none
+  display: none;
+  border: 3px solid #c92432;
+  padding: .5em
 }

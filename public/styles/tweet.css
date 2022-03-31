@@ -30,7 +30,8 @@
 .article_tweet.body {
   margin: 1em 0;
   padding: 0.75em 0;
-  border-bottom: 3px solid black
+  border-bottom: 3px solid black;
+  word-wrap: break-word;
 }
 
 .article_tweet.footer {
