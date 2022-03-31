@@ -21,7 +21,7 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  font-size: 2em;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   display:flex;
@@ -67,18 +67,14 @@ nav {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: unset;
-  }
-  nav {
-    width: 100%;
-    flex: 0 0 100%;
-    position: fixed;
-    top: 0;
+    font-size: 1.5em;
   }
   body > header{
     width: 35%;
-    flex-direction: column;
+    height: 20%;
     margin-left: .5em;
-    margin-top: 5em;
+    margin-top: 4em;
+    padding:5px;
   }
   main{
     width: 45%;
@@ -88,6 +84,3 @@ nav {
     margin-right: .5em;
   }
 }
-
-/* @media only screen and (min-width: 768px) {
-} */

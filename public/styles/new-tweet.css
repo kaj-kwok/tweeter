@@ -3,7 +3,6 @@ textarea {
   outline: none;
   background-color: inherit;
   border-bottom: 4px solid black;
-  /* padding: 0.75em 0; */
   resize: none
 }
 
@@ -28,6 +27,16 @@ textarea {
   border: 0;
   background-color: var(--navy-color);
   color: #FFFFFF
+}
+
+.tweet_buttons > button:hover {
+  color: #FFFFFF;
+    box-shadow: 3px 3px rgb(1, 5, 36), 2px 2px rgb(1, 5, 36), 1px 1px rgb(1, 5, 36);
+    border: 1px solid rgb(1, 5, 36);
+}
+
+.tweet_buttons > button:active {
+  transform: translate(3px, 3px);
 }
 
 form {
