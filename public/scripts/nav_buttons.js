@@ -3,7 +3,9 @@ $(document).ready(() => {
   //new tweet button, reset view and open textarea
   $('.nav_text_arrow').on("click", (e) => {
     if($('html').scrollTop() === 0){
-      $('.new-tweet').slideToggle()
+      $('.new-tweet').slideToggle(function() {
+        $('#tweet-text').focus()
+      })
     } else {
       $('html').animate({scrollTop: '0'}, 1000);
       $('.new-tweet').show();

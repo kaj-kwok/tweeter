@@ -34,10 +34,11 @@ nav {
   font-family: bungee
 }
 
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
 
  main {
    width: 90%;
@@ -46,3 +47,47 @@ nav {
    justify-content: center;
    margin-top: 4em
  }
+
+ body > header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: goldenrod;
+  background-image: url("/images/brick-wall.png")
+}
+
+
+ @media only screen and (min-width: 1024px){
+
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: unset;
+  }
+  nav {
+    width: 100%;
+    flex: 0 0 100%;
+    position: fixed;
+    top: 0;
+  }
+  body > header{
+    width: 35%;
+    flex-direction: column;
+    margin-left: .5em;
+    margin-top: 5em;
+  }
+  main{
+    width: 45%;
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 5em;
+    margin-right: .5em;
+  }
+}
+
+/* @media only screen and (min-width: 768px) {
+} */
