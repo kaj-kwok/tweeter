@@ -62,7 +62,7 @@ $(document).ready(function() {
     let currentText = $("#tweet-text").val()
     if (!currentText){
       $('#tweet_error').slideDown().html(`<i class="fa-solid fa-triangle-exclamation"></i> Please enter your Tweet`);
-      $('#tweet-text').addClass("error")
+      $('#tweet-text').addClass("error");
     }
     if (currentText.length > 140) {
       $('#tweet_error').slideDown().html(`<i class="fa-solid fa-triangle-exclamation"></i>Tweet has too many characters`);
@@ -74,6 +74,11 @@ $(document).ready(function() {
         loadTweets()
       });
     }
+  });
+
+  $("#submit_tweet").focusout(() => {
+    $('#tweet-text').removeClass("error");
+    $('#tweet_error').slideUp()
   });
 
   

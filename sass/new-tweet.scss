@@ -1,0 +1,50 @@
+@use 'layout';
+
+textarea {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  border-bottom: 4px solid black;
+  resize: none
+}
+
+#tweet-text {
+  border-bottom: 3px solid black;
+  padding: 4px;
+  &.error {
+    border-bottom: 4px solid layout.$primaryerror-color;
+    color: layout.$primaryerror-color;
+  }
+}
+
+.tweet_buttons {
+  display:flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+  font-family: bungee;
+  > button {
+    border: 0;
+    background-color: layout.$primaryheader-color;
+    color: layout.$bodybackground-color;
+    &:hover {
+      color: layout.$bodybackground-color;
+        box-shadow: 3px 3px rgb(1, 5, 36), 2px 2px rgb(1, 5, 36), 1px 1px rgb(1, 5, 36);
+        border: 1px solid rgb(1, 5, 36);
+    }
+    &:active {
+      transform: translate(3px, 3px);
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column
+}
+
+#tweet_error {
+  color: layout.$primaryerror-color;
+  display: none;
+  border: 3px solid layout.$primaryerror-color;
+  padding: .5em
+}

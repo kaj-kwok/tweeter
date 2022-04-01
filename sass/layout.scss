@@ -1,0 +1,93 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+$primaryheader-color: #4056A1;
+$headertext-color: goldenrod;
+$primarytext-color: #545149;
+$bodybackground-color: #f4f1ec;
+$primaryerror-color: #c92432;
+
+@mixin centered() {
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  color: $primarytext-color;
+  background-color: $bodybackground-color;
+  font-size: 2em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  display:flex;
+  flex-direction: column;
+  @include centered;
+}
+
+nav {
+  font-family: bungee
+}
+
+
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+ main {
+   width: 90%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin-top: 4em
+ }
+
+ body {
+  > header {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include centered;
+    background-color: $headertext-color;
+    background-image: url("/images/brick-wall.png")
+ }
+}
+
+
+ @media only screen and (min-width: 1024px){
+
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: unset;
+    font-size: 1.5em;
+    > header{
+      width: 35%;
+      height: 20%;
+      margin-left: .5em;
+      margin-top: 4em;
+      padding:5px;
+    }
+  }
+  main{
+    width: 45%;
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 5em;
+    margin-right: .5em;
+  }
+}

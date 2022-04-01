@@ -1,54 +1,125 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 2em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  font-family: bungee;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4em;
+}
+
+body > header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: goldenrod;
+  background-image: url("/images/brick-wall.png");
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: unset;
+    font-size: 1.5em;
+  }
+  body > header {
+    width: 35%;
+    height: 20%;
+    margin-left: 0.5em;
+    margin-top: 4em;
+    padding: 5px;
+  }
+
+  main {
+    width: 45%;
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 5em;
+    margin-right: 0.5em;
+  }
+}
 .tweet_container {
   border: 3px solid black;
   padding: 0.75em;
-  margin: 1.5em 0
+  margin: 1.5em 0;
 }
-
 .tweet_container:hover {
-  box-shadow: 7px 7px silver
+  box-shadow: 7px 7px silver;
 }
 
 .article_tweet.header {
   display: flex;
-  justify-content: space-between
-  
+  justify-content: space-between;
 }
-
-.user_block {
-  display: flex;
-  align-items: center
-}
-
 .article_tweet.handle_text {
-  color: silver
+  color: silver;
 }
-
-.avatar {
-  margin-right: 1em
-}
-
 .article_tweet.body {
   margin: 1em 0;
   padding: 0.75em 0;
   border-bottom: 3px solid black;
   word-wrap: break-word;
 }
-
 .article_tweet.footer {
   display: flex;
   justify-content: space-between;
-  padding: 0 1em
+  padding: 0 1em;
 }
-
 .article_tweet.icons {
-  color: var(--navy-color);
-  font-size: smaller
+  color: #4056A1;
+  font-size: smaller;
 }
-
 .article_tweet.counter {
   font-size: small;
 }
 
+.user_block {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  margin-right: 1em;
+}
+
 .icons i:hover {
-  color:goldenrod
+  color: goldenrod;
 }

@@ -1,52 +1,126 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 2em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  font-family: bungee;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4em;
+}
+
+body > header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: goldenrod;
+  background-image: url("/images/brick-wall.png");
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: unset;
+    font-size: 1.5em;
+  }
+  body > header {
+    width: 35%;
+    height: 20%;
+    margin-left: 0.5em;
+    margin-top: 4em;
+    padding: 5px;
+  }
+
+  main {
+    width: 45%;
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 5em;
+    margin-right: 0.5em;
+  }
+}
 textarea {
   border: none;
   outline: none;
   background-color: inherit;
   border-bottom: 4px solid black;
-  resize: none
+  resize: none;
 }
 
+#tweet-text {
+  border-bottom: 3px solid black;
+  padding: 4px;
+}
 #tweet-text.error {
   border-bottom: 4px solid #c92432;
   color: #c92432;
 }
 
-#tweet-text {
-  border-bottom: 3px solid black;
-  padding: 4px
-}
-
 .tweet_buttons {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   padding: 0.5em 0;
-  font-family: bungee
+  font-family: bungee;
 }
-
 .tweet_buttons > button {
   border: 0;
-  background-color: var(--navy-color);
-  color: #FFFFFF
+  background-color: #4056A1;
+  color: #f4f1ec;
 }
-
 .tweet_buttons > button:hover {
-  color: #FFFFFF;
-    box-shadow: 3px 3px rgb(1, 5, 36), 2px 2px rgb(1, 5, 36), 1px 1px rgb(1, 5, 36);
-    border: 1px solid rgb(1, 5, 36);
+  color: #f4f1ec;
+  box-shadow: 3px 3px rgb(1, 5, 36), 2px 2px rgb(1, 5, 36), 1px 1px rgb(1, 5, 36);
+  border: 1px solid rgb(1, 5, 36);
 }
-
 .tweet_buttons > button:active {
   transform: translate(3px, 3px);
 }
 
 form {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
 
 #tweet_error {
   color: #c92432;
   display: none;
   border: 3px solid #c92432;
-  padding: .5em
+  padding: 0.5em;
 }

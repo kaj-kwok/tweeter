@@ -4,83 +4,115 @@
  * Do not modify these two selectors, please
  */
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 /*
  * Global layout stuff
  */
-
- :root {
-   --navy-color: #4056A1
- }
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 2em;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav {
-  font-family: bungee
+  font-family: bungee;
 }
-
-
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
- main {
-   width: 90%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   margin-top: 4em
- }
-
- body > header {
-  height: 400px;
-  width: 100%;
+main {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: goldenrod;
-  background-image: url("/images/brick-wall.png")
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 4em;
 }
 
+body > header {
+  height: 400px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: goldenrod;
+  background-image: url("/images/brick-wall.png");
+}
 
- @media only screen and (min-width: 1024px){
-
+@media only screen and (min-width: 1024px) {
   body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
     font-size: 1.5em;
   }
-  body > header{
+  body > header {
     width: 35%;
     height: 20%;
     margin-left: .5em;
     margin-top: 4em;
-    padding:5px;
+    padding: 5px;
   }
-  main{
+  main {
     width: 45%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin-left: 5em;
     margin-right: .5em;
   }
 }
+/*# sourceMappingURL=layout.css.map */
