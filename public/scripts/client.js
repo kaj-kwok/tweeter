@@ -8,12 +8,13 @@
 
 $(document).ready(function() {
 
+  //function to loop through tweets
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet);
-    }
-  }
+    };
+  };
 
   //function to escape text content
   const escape = function (str) {
@@ -22,8 +23,9 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
+  //create html markup of tweet
   const createTweetElement = function(obj){
-    let convertedTime = timeago.format(obj["created_at"])
+    let convertedTime = timeago.format(obj["created_at"]);
     let $tweet =
     `<article class="tweet_container">
       <header class="article_tweet header">
@@ -49,17 +51,18 @@ $(document).ready(function() {
     $.get('/tweets', function(data) {
       $('#tweets-container').empty();
       renderTweets(data);
-    })
+    });
   };
 
-  loadTweets()
+  //initiate first load of stored tweets
+  loadTweets();
 
   //submit Post for tweet Form
   $("#submit_tweet").submit(function(event) {
     event.preventDefault();
     $('#tweet-text').removeClass("error");
-    $('#tweet_error').slideUp()
-    let currentText = $("#tweet-text").val()
+    $('#tweet_error').slideUp();
+    let currentText = $("#tweet-text").val();
     if (!currentText){
       $('#tweet_error').slideDown().html(`<i class="fa-solid fa-triangle-exclamation"></i> Please enter your Tweet`);
       $('#tweet-text').addClass("error");
@@ -71,15 +74,15 @@ $(document).ready(function() {
       const tweetContent = $(this).serialize();
       const post = $.post(url="/tweets", tweetContent, function() {
         $("#tweet-text").val('');
-        loadTweets()
+        loadTweets();
       });
-    }
+    };
   });
 
+  //added function to clear error messages if textarea loses focus
   $("#submit_tweet").focusout(() => {
     $('#tweet-text').removeClass("error");
-    $('#tweet_error').slideUp()
+    $('#tweet_error').slideUp();
   });
 
-  
 });
